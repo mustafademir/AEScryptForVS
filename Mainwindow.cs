@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Net.Mail;// mail işlemleri için
+using System.Net.Mail;// for mail processing
 using System.Net;
-using System.IO; //dosya işlemleri için
+using System.IO; //for file processing
 using System.Security.Cryptography;
 using System.Data.SqlClient;
 namespace mustafa
@@ -46,11 +46,11 @@ namespace mustafa
                 sc.Port = 587;
                 sc.Host = "smtp.gmail.com";
                 sc.EnableSsl = true;
-                sc.Credentials = new NetworkCredential("mustafa.demir@bil.omu.edu.tr", "12060385");
+                sc.Credentials = new NetworkCredential("xxx.com", "password");
 
 
                 MailMessage mail = new MailMessage();
-                mail.From = new MailAddress("mustafa.demir@bil.omu.edu.tr");
+                mail.From = new MailAddress("xxx.com");
                 mail.IsBodyHtml = false;
                 mail.To.Add(comboBox1.Text.ToString());
                 mail.Subject = richTextBox1.Text.ToString();
@@ -94,7 +94,7 @@ namespace mustafa
         private void paketle()
         {
             
-            StreamWriter sw = new StreamWriter(@"C:\Users\mustafademir\Desktop\KKKLASOR\Belge.txt");
+            StreamWriter sw = new StreamWriter(@"C:\Users\exorion\Desktop\KKKLASOR\Belge.txt");
             sw.WriteLine(cry.SifreleAES(richTextBox2.Text, "12345678901234567890123456789012"));
             sw.Close();
             
@@ -125,7 +125,7 @@ namespace mustafa
             }
             else
             {
-                MessageBox.Show("dosya secmediniz");
+                MessageBox.Show("don't change file");
             }
         }
     }
